@@ -5,13 +5,13 @@ Created on Fri May  7 12:46:12 2021
 @author: jonat
 """
 
-import keras
+from keras import models as kmodels
 from PIL import Image, ImageOps
 import numpy as np
 
 def teachable_machine_classification(img, weights_file_5):
     # Load the model
-    model = keras.models.load_model(weights_file_5)
+    model = kmodels.load_model(weights_file_5)
 
     # Create the array of the right shape to feed into the keras model
     data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
